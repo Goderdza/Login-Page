@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/login.scss";
+import Header from "../components/Header";
 
 export const Login = () => {
   const [values, setValues] = useState({
@@ -51,38 +52,41 @@ export const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="data">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="input-fields">
-            <input
-              id="username-input"
-              name="username"
-              type="text"
-              placeholder="Username"
-              onChange={handleChange}
-            />
-            <p>{savedErrors.username}</p>
-            <input
-              id="password-input"
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={handleChange}
-            />
-            <p>{savedErrors.password}</p>
-          </div>
-          <div>
-            <a href="#" className="forgotten-password">
-              Forgot password?
-            </a>
-          </div>
-          <button type="submit" value="submit">
-            Submit
-          </button>
-        </form>
+    <>
+      <Header />
+      <div className="login-page">
+        <div className="data">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <div className="input-fields">
+              <input
+                id="username-input"
+                name="username"
+                type="text"
+                placeholder="Username"
+                onChange={handleChange}
+              />
+              <p>{savedErrors.username}</p>
+              <input
+                id="password-input"
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={handleChange}
+              />
+              <p>{savedErrors.password}</p>
+            </div>
+            <div>
+              <a href="#" className="forgotten-password">
+                Forgot password?
+              </a>
+            </div>
+            <button type="submit" value="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
