@@ -2,18 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Main from "./pages/Main";
-import Login from "./pages/login";
+import Login from "./pages/Login";
+import Register from "./pages/Register"
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
     path: "/main",
     element: <Main />,
+  },{
+    path: "/register",
+    element: <Register />,
   },
 ]);
 

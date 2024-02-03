@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "../styles/login.scss";
+import "../styles/Login.scss";
 import Header from "../components/Header";
+import CancelButton from "../components/CancelButton";
 
 export const Login = () => {
   const [values, setValues] = useState({
@@ -19,6 +20,7 @@ export const Login = () => {
     setSavedErrors(validateData(values));
   };
 
+  //validation
   const validateData = (data) => {
     const errors = {};
     const background = document.body;
@@ -51,9 +53,13 @@ export const Login = () => {
     return errors;
   };
 
+  //code below describes all the html elements that im using to create Login page
   return (
     <>
-      <Header />
+      <div className="headings">
+        <Header className="header"/>
+        <CancelButton className="cancel-button" />
+      </div>
       <div className="login-page">
         <div className="data">
           <form className="login-form" onSubmit={handleSubmit}>
