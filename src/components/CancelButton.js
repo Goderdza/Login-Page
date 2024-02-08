@@ -6,7 +6,7 @@ const CancelButton = () => {
     const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/main');
+    navigate('/');
   };
   return (
     <div className="cancel">
